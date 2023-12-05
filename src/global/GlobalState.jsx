@@ -1,29 +1,25 @@
-import { useEffect, useState } from "react";
 import GlobalContext from "./GlobalContext";
 import Router from "../Router/Router";
+import { useState } from "react";
+import usePokemonData from "../hooks/usePokemonData";
+import usePokemonDetails from "../hooks/usePokemonDetails";
 
 const GlobalState = () => {
-  const [pokemonList, setPokemonList] = useState([]);
+  const [pokemonData] = usePokemonData("pokemon", []);
+  const [pokemons, setPokemons] = usePokemonDetails(pokemonData);
   const [pokedex, setPokedex] = useState([]);
-
-    const getPokemonList = () => {
-      
-   };
-
-  useEffect(() => {
-    getPokemonList();
-  }, []);
 
   const data = {
     getters: {
-      pokemonList,
+      pokemons,
       pokedex,
     },
     setters: {
+      setPokemons,
       setPokedex,
-      setPokemonList,
     },
   };
+  console.log(data);
 
   return (
     <GlobalContext.Provider value={data}>
