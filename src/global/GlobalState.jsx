@@ -19,7 +19,7 @@ const GlobalState = () => {
       setPokedex,
     },
   };
-  console.log(data);
+ 
 
   return (
     <GlobalContext.Provider value={data}>
