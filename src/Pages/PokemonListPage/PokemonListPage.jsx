@@ -6,17 +6,15 @@ import { mapPokemons, sortPokemons } from "../../utils/pokemonUtils";
 const PokemonListPage = () => {
   const { getters } = useContext(GlobalContext);
 
-    const pokemonsSorted = sortPokemons(getters.pokemons)
-    
-    const pokemonsMapped = mapPokemons(pokemonsSorted) 
-  
+  const pokemonsSorted = sortPokemons(getters.pokemons);
+
+  const pokemonsMapped = mapPokemons(pokemonsSorted);
+
   return (
     <DivHome>
       <TitlePage>Todos Pokémons</TitlePage>
 
-      <DivPokeList>
-        {pokemonsMapped}
-      </DivPokeList>
+      <DivPokeList>{pokemonsMapped}</DivPokeList>
     </DivHome>
   );
 };

@@ -66,6 +66,10 @@ export const ImagePokebol = styled.img`
   margin-right: 20px;
 `;
 
+export const PokemonElementImage = styled.img`
+ 
+  
+`
 //buttons
 const GeneralButtonAttributes = styled.button`
   margin: 20px;
