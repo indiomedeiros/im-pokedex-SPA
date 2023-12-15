@@ -20,3 +20,18 @@ export const mapPokemons = (pokemons) => {
   });
 };
 
+export const findPokemonById = (id, sourcePokemons) => {
+  const filteredPokemon = sourcePokemons.filter((pokemon) => {
+    return pokemon.id === id;
+  });
+
+  return filteredPokemon;
+};
+
+export const removePokemonFromList = (id, sourcePokemons) => {
+  const newList = sourcePokemons.filter((pokemon) => {
+    return pokemon.id !== id;
+  });
+
+  return newList;
+};
