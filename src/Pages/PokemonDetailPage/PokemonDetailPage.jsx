@@ -27,7 +27,7 @@ const PokemonDetailPage = () => {
   console.log(pokemonDetails);
 
   const nameFirstLetterCapital =
-    pokemonDetails?.name[0].toUpperCase() + pokemonDetails?.name.substring(1);
+    `${pokemonDetails?.name[0].toUpperCase()}${pokemonDetails?.name.substring(1)}`;
   const mainPokemonType = pokemonDetails?.types[0].type.name;
 
   const mainElementImage =
