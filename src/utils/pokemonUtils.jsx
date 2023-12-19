@@ -35,3 +35,7 @@ export const removePokemonFromList = (id, sourcePokemons) => {
 
   return newList;
 };
+
+export const checkPokemonExistsOnPage = (pokeName, sourcePokemons) => {
+  return sourcePokemons.find((pokemon) => pokemon.name === pokeName);
+};

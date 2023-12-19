@@ -7,7 +7,7 @@ const usePokemonData = (path, initialState) => {
   const getPokemonData = async () => {
     try {
       const response = await PokeApi.get(path);
-      setData(response.data.results);
+      setData(response.data);
     } catch (error) {
       console.log(error);
     }

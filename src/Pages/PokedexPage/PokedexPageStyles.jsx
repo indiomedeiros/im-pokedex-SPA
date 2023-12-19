@@ -4,7 +4,6 @@ export const DivPokeList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 100%;
 `;
 
 export const TitlePage = styled.div`
@@ -16,5 +15,5 @@ export const TitlePage = styled.div`
 `;
 export const DivHome = styled.div`
   background: #737373;
-  min-height: 80vh;
+  min-height: 100vh;
 `;
