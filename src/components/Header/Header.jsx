@@ -8,11 +8,19 @@ import {
   HeaderContainer,
   LogoStyle,
 } from "./HeaderStyles";
+import usePokemonManipulation from "../../hooks/usePokemonManipulation";
+import { useContext } from "react";
+import GlobalContext from "../../global/GlobalContext";
+import { checkPokemonExistsOnPage } from "../../utils/pokemonUtils";
 
 const Header = () => {
   const navigate = useNavigate();
-
   const { pathname } = useLocation();
+  const { getters } = useContext(GlobalContext);
+  const [removePokemonFromPage] = usePokemonManipulation();
+
+  const pokemonName = pathname.replace("/details/", "");
+  const checkResults = checkPokemonExistsOnPage(pokemonName, getters.pokedex);
 
   return (
     <HeaderContainer>
@@ -20,16 +28,18 @@ const Header = () => {
 
       {(pathname === "/pokedex" || pathname.includes("/details")) && (
         <ButtonHome onClick={() => goToHome(navigate)}>
-         ❮ <u>Todos os Pokémons</u>
+          ❮ <u>Todos os Pokémons</u>
         </ButtonHome>
       )}
-      {pathname === "/" && (
+      {(pathname === "/" || (!checkResults && pathname !== "/pokedex")) && (
         <ButtonPokedex onClick={() => goToPokedex(navigate)}>
           Pokédex
         </ButtonPokedex>
       )}
-      {pathname.includes("/details") && (
-        <ButtonDelete>Excluir da Pokédex</ButtonDelete>
+      {checkResults && (
+        <ButtonDelete onClick={() => removePokemonFromPage(checkResults.id)}>
+          Excluir da Pokédex
+        </ButtonDelete>
       )}
     </HeaderContainer>
   );

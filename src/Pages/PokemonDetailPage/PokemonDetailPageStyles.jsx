@@ -6,6 +6,7 @@ export const MainContainer = styled.main`
   flex-direction: column;
   background: #737373;
   align-items: center;
+  min-height: 100vh;
 `;
 
 export const PageTitle = styled.h1`
@@ -60,7 +61,6 @@ export const PokemonStatsBox = styled.div`
   grid-row: 1/3;
   border-radius: 8px;
   padding: 18px;
-  row-gap: 20px;
   
 `;
 
@@ -108,6 +108,9 @@ export const SubTitleText = styled.h2`
   font-weight: 800;
   line-height: normal;
   align-self: self-start;
+  margin-bottom: 20px;
+  
+  
 `;
 
 //image

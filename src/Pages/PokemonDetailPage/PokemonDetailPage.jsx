@@ -23,11 +23,11 @@ import BaseStats from "../../components/BaseStats/BaseStats";
 const PokemonDetailPage = () => {
   const { pokename } = useParams();
   const [pokemonDetails] = usePokemonData(`pokemon/${pokename}`);
+  
 
-  console.log(pokemonDetails);
-
-  const nameFirstLetterCapital =
-    `${pokemonDetails?.name[0].toUpperCase()}${pokemonDetails?.name.substring(1)}`;
+  const nameFirstLetterCapital = `${pokemonDetails?.name[0].toUpperCase()}${pokemonDetails?.name.substring(
+    1
+  )}`;
   const mainPokemonType = pokemonDetails?.types[0].type.name;
 
   const mainElementImage =
@@ -44,10 +44,12 @@ const PokemonDetailPage = () => {
   const pokemonOficialArtworkImage =
     pokemonDetails?.sprites.other["official-artwork"]["front_default"];
 
+  
+
   return (
     <MainContainer>
       <PageTitle>Detalhes</PageTitle>
-      <PokemonAttributeGrid type={mainPokemonType}>
+      {pokemonDetails && <PokemonAttributeGrid type={mainPokemonType}>
         <PokemonImageBox>
           <img src={pokemonDetails?.sprites["front_default"]} />
         </PokemonImageBox>
@@ -56,12 +58,11 @@ const PokemonDetailPage = () => {
           <img src={pokemonDetails?.sprites["back_default"]} />
         </PokemonImageBox>
         <PokemonStatsBox>
-          <SubTitleText>Base Stats:</SubTitleText>
-          {pokemonDetails?.stats.map(atribute=> {
-            return <BaseStats key={atribute.stat.name} nameStats={ atribute.stat.name} value={ atribute['base_stat']} />
-          })}
-          <p>Total: </p>
           
+          <BaseStats
+            stats={pokemonDetails?.stats}
+          />
+            
         </PokemonStatsBox>
 
         <PokemonMovesBox>
@@ -77,15 +78,15 @@ const PokemonDetailPage = () => {
             <SubTitleText>Moves:</SubTitleText>
             {pokemonDetails?.moves.map((item, index) => {
               if (index < 4) {
-                return <p key={item.move.name}>{ item.move.name}</p>
+                return <p key={item.move.name}>{item.move.name}</p>;
               }
-              
             })}
           </PokemonMovesList>
         </PokemonMovesBox>
         <PokebolImage src={bigPokebolBackground} />
         <PokemonCardImage src={pokemonOficialArtworkImage} />
       </PokemonAttributeGrid>
+      }
     </MainContainer>
   );
 };

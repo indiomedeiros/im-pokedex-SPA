@@ -1,26 +1,33 @@
-import {
-  BaseStatsContainer,
-  NameStats,
-  ProgressBarFiller,
-  ValueStats,
-} from "./BaseStatsStyles";
+import { SubTitleText } from "../../Pages/PokemonDetailPage/PokemonDetailPageStyles";
+import AttributeProgressBar from "../AttributeProgressBar/AttributeProgressBar";
+import { BaseStatsContainer } from "./BaseStatsStyles";
 
-const BaseStats = ({ nameStats, value }) => {
+const BaseStats = ({ stats }) => {
+  let totalStatusPoints = 0;
 
-  console.log(nameStats.replace("especial", "sp."));
+  const baseStatsMapped =
+    stats &&
+    stats.map((atribute) => {
+      totalStatusPoints = totalStatusPoints + atribute["base_stat"];
 
-  const reduceName = nameStats.replace("special-", "sp. ");
-
-  const nameFirstLetterCapital =
-    reduceName[0].toUpperCase() + reduceName.substring(1);
+      return (
+        <AttributeProgressBar
+          key={atribute.stat.name}
+          name={atribute.stat.name}
+          value={atribute["base_stat"]}
+        />
+      );
+    });
 
   return (
-    <BaseStatsContainer>
-      <NameStats>{nameFirstLetterCapital}</NameStats>
-      <ValueStats>{value}</ValueStats>
-      <ProgressBarFiller completed={value} />
-          
-    </BaseStatsContainer>
+    <>
+      <SubTitleText>Base Stats:</SubTitleText>
+      <BaseStatsContainer>
+        {baseStatsMapped}
+
+        <AttributeProgressBar name={"Total"} total={totalStatusPoints} />
+      </BaseStatsContainer>
+    </>
   );
 };
 
