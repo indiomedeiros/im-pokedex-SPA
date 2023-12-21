@@ -25,4 +25,5 @@ export const DivPokeList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
 `;

@@ -6,8 +6,9 @@ import usePokemonDetails from "../hooks/usePokemonDetails";
 
 const GlobalState = () => {
   const [pokemonData] = usePokemonData("pokemon", []);
-  const [pokemons, setPokemons] = usePokemonDetails(pokemonData);
+  const [pokemons, setPokemons] = usePokemonDetails(pokemonData.results);
   const [pokedex, setPokedex] = useState([]);
+  
 
   const data = {
     getters: {
