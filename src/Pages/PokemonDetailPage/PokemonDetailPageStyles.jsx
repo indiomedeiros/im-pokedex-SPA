@@ -11,13 +11,14 @@ export const MainContainer = styled.main`
 
 export const PageTitle = styled.h1`
   color: white;
-  padding: 60px 0px 56px 150px;
+  padding: 60px 0px 56px 30px;
   text-align: left;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
   font-family: sans-serif;
-  align-self: flex-start;
+  align-self: center;
+  width: 1389.143px;
 `;
 
 export const PokemonAttributeGrid = styled.section`
@@ -61,7 +62,6 @@ export const PokemonStatsBox = styled.div`
   grid-row: 1/3;
   border-radius: 8px;
   padding: 18px;
-  
 `;
 
 export const PokemonMovesBox = styled.div`
@@ -73,6 +73,7 @@ export const PokemonMovesBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 34px;
+  position: absolute;
 `;
 
 export const PokemonMovesList = styled.div`
@@ -82,8 +83,20 @@ export const PokemonMovesList = styled.div`
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  align-items: start;
   padding: 18px;
-  gap: 10px;
+  gap: 0.625rem;
+  
+`;
+
+export const PokemonMoves = styled.p`
+  font-size: 0.875rem;
+  border: 1px solid black;
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(0, 0, 0, 0.14);
+  background: #ececec;
+  
 `;
 
 //texts
@@ -109,8 +122,6 @@ export const SubTitleText = styled.h2`
   line-height: normal;
   align-self: self-start;
   margin-bottom: 20px;
-  
-  
 `;
 
 //image
@@ -132,11 +143,13 @@ export const PokemonCardImage = styled.img`
 `;
 
 export const PokebolImage = styled.img`
-  width: 78%;
-  height: 99%;
+  width: 77%;
+  height: 100%;
   grid-column: 2/5;
   position: relative;
   object-fit: cover;
   right: 0;
+ 
   position: absolute;
+ 
 `;
