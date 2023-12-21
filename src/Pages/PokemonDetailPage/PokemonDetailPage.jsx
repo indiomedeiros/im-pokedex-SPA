@@ -14,6 +14,7 @@ import {
   TitleText,
   PageTitle,
   SubTitleText,
+  PokemonMoves,
 } from "./PokemonDetailPageStyles";
 import usePokemonData from "../../hooks/usePokemonData";
 import { getPokemonElementImage } from "../../utils/pokemonElementImage";
@@ -64,7 +65,7 @@ const PokemonDetailPage = () => {
           />
             
         </PokemonStatsBox>
-
+        <PokebolImage src={bigPokebolBackground} />
         <PokemonMovesBox>
           <div>
             <OrderText>{pokemonOrderNumber}</OrderText>
@@ -78,15 +79,18 @@ const PokemonDetailPage = () => {
             <SubTitleText>Moves:</SubTitleText>
             {pokemonDetails?.moves.map((item, index) => {
               if (index < 4) {
-                return <p key={item.move.name}>{item.move.name}</p>;
+                return <PokemonMoves key={item.move.name}>{item.move.name}</PokemonMoves>;
               }
             })}
           </PokemonMovesList>
+          
         </PokemonMovesBox>
-        <PokebolImage src={bigPokebolBackground} />
+        
         <PokemonCardImage src={pokemonOficialArtworkImage} />
+        
       </PokemonAttributeGrid>
       }
+    
     </MainContainer>
   );
 };
