@@ -13,7 +13,7 @@ const PokedexPage = () => {
 
 
     return ( <DivHome>
-        <TitlePage>Todos Pokémons</TitlePage>
+        <TitlePage>Meus Pokémons</TitlePage>
   
         <DivPokeList>{pokemonsMapped}</DivPokeList>
       </DivHome>);
