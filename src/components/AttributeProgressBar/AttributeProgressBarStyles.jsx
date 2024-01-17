@@ -6,15 +6,13 @@ export const AttributeProgressBarContainer = styled.div`
   height: 30px;
   grid-template-columns: 80px 10px 1fr;
   align-items: center;
-
   column-gap: 20px;
-
   border-bottom: 1px solid whitesmoke;
 `;
 export const NameStats = styled.p`
   color: #8a8a8a;
   font-weight: 600;
-  columns: 1/2;
+  grid-column: 1/2;
   text-align: right;
   font-size: 16px;
 `;
@@ -22,10 +20,9 @@ export const NameStats = styled.p`
 export const ValueStats = styled.p`
   color: black;
   font-weight: 600;
-  columns: 2/3;
+  grid-column: 2/3;
   text-align: right;
 `;
-
 
 export const ProgressBarFiller = styled.div`
   height: 10px;

@@ -37,7 +37,7 @@ export const PokemonAttributeGrid = styled.section`
   column-gap: 34px;
 `;
 
-export const PokemonImageBox = styled.div`
+export const PokemonImageBox = styled.section`
   background-color: white;
   width: 282px;
   height: 282px;
@@ -51,7 +51,7 @@ export const PokemonImageBox = styled.div`
   }
 `;
 
-export const PokemonStatsBox = styled.div`
+export const PokemonStatsBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,7 @@ export const PokemonStatsBox = styled.div`
   padding: 18px;
 `;
 
-export const PokemonMovesBox = styled.div`
+export const PokemonMovesBox = styled.section`
   width: 292px;
   height: 613px;
   grid-column: 3/3;
@@ -86,7 +86,6 @@ export const PokemonMovesList = styled.div`
   align-items: start;
   padding: 18px;
   gap: 0.625rem;
-  
 `;
 
 export const PokemonMoves = styled.p`
@@ -96,7 +95,6 @@ export const PokemonMoves = styled.p`
   border-radius: 0.75rem;
   border: 1px dashed rgba(0, 0, 0, 0.14);
   background: #ececec;
-  
 `;
 
 //texts
@@ -149,7 +147,6 @@ export const PokebolImage = styled.img`
   position: relative;
   object-fit: cover;
   right: 0;
- 
+
   position: absolute;
- 
 `;

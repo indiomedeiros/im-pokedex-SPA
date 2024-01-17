@@ -1,4 +1,4 @@
-import { BaseStatsContainer } from "../BaseStats/BaseStatsStyles";
+import { changeFirstLetterToCapital } from "../../utils/pokemonUtils";
 import {
   AttributeProgressBarContainer,
   NameStats,
@@ -7,10 +7,7 @@ import {
 } from "./AttributeProgressBarStyles";
 
 const AttributeProgressBar = ({ name, value, total }) => {
-  const reduceName = name.replace("special-", "sp. ");
-
-  const nameFirstLetterCapital =
-    reduceName[0].toUpperCase() + reduceName.substring(1);
+  const nameFirstLetterCapital = changeFirstLetterToCapital(name);
 
   return (
     <>

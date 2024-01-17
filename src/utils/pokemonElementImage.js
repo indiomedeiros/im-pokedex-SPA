@@ -40,7 +40,8 @@ import waterElementImage from "../assets/ImagesPokemonsElements/water-element-im
     flying: flyingElementImage
   };
   
-  export const getPokemonElementImage = (typeName) => {
-    return PokemonElementTypesImages[typeName];
+export const getPokemonElementImage = (typeName) => {
+    
+    return typeName ? PokemonElementTypesImages[typeName]: null;
   };
   

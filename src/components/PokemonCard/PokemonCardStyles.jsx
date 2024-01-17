@@ -33,10 +33,8 @@ export const Title = styled(GeneralTextAttributes)`
 `;
 
 //image
-export const DivElementalTypes = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+export const ElementalTypesContainer = styled.div`
+  display: flex;
   width: 80%;
   margin-top: 10px;
   margin-left: 20px;
@@ -66,10 +64,7 @@ export const ImagePokebol = styled.img`
   margin-right: 20px;
 `;
 
-export const PokemonElementImage = styled.img`
- 
-  
-`
+export const PokemonElementImage = styled.img``;
 //buttons
 const GeneralButtonAttributes = styled.button`
   margin: 20px;

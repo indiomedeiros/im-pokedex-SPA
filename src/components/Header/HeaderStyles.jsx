@@ -6,7 +6,6 @@ export const HeaderContainer = styled.header`
   grid-template-rows: 1fr;
   height: 160px;
 `;
-export const DivTitle = styled.div``;
 
 export const ButtonPokedex = styled.button`
   grid-column: 3/4;

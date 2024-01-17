@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { goToHome, goToPokedex } from "../../Router/coordinator";
+import { goToHome, goToPokedex } from "../../router/coordinator";
 import logo from "../../assets/pokemon-logo.png";
 import {
   ButtonDelete,
@@ -8,10 +8,11 @@ import {
   HeaderContainer,
   LogoStyle,
 } from "./HeaderStyles";
-import usePokemonManipulation from "../../hooks/usePokemonManipulation";
+
 import { useContext } from "react";
 import GlobalContext from "../../global/GlobalContext";
 import { checkPokemonExistsOnPage } from "../../utils/pokemonUtils";
+import usePokemonManipulation from "../../hooks/usePokemonManipulation";
 
 const Header = () => {
   const navigate = useNavigate();

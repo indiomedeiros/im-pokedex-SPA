@@ -33,6 +33,7 @@ const usePokemonManipulation = () => {
     const newList = removePokemonFromList(idToRemovePokemon, getters.pokemons);
 
     setters.setPokemons(newList);
+    setters.setShowModal(true)
   };
 
   return [removePokemonFromPage, addPokemonToPage];
