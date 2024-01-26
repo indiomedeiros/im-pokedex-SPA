@@ -14,11 +14,11 @@ export const NameStats = styled.p`
   font-weight: 600;
   grid-column: 1/2;
   text-align: right;
-  font-size: 16px;
+  font-size: 12px;
 `;
 
 export const ValueStats = styled.p`
-  color: black;
+  color: #8a8a8a;
   font-weight: 600;
   grid-column: 2/3;
   text-align: right;

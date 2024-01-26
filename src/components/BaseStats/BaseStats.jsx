@@ -9,11 +9,10 @@ const BaseStats = ({ stats }) => {
     stats &&
     stats.map((atribute) => {
       totalStatusPoints = totalStatusPoints + atribute["base_stat"];
-
       return (
         <AttributeProgressBar
           key={atribute.stat.name}
-          name={atribute.stat.name}
+          name={atribute.stat.name.replace("special-", "Sp. ")}
           value={atribute["base_stat"]}
         />
       );

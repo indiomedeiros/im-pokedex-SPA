@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import {
-  ButtonCardAddRemove,
+  ButtonCardRemover,
+  ButtonCardAdd,
   ButtonCardDetail,
   CardContainer,
   ElementalTypesContainer,
@@ -54,13 +55,11 @@ const PokemonCard = ({ id, name, types, image }) => {
       </ButtonCardDetail>
 
       {pathname === "/pokedex" ? (
-        <ButtonCardAddRemove onClick={() => removePokemon(id)}>
-          Remover
-        </ButtonCardAddRemove>
+        <ButtonCardRemover onClick={() => removePokemon(id)}>
+          Excluir
+        </ButtonCardRemover>
       ) : (
-        <ButtonCardAddRemove onClick={() => addPokemon(id)}>
-          Capturar!
-        </ButtonCardAddRemove>
+        <ButtonCardAdd onClick={() => addPokemon(id)}>Capturar!</ButtonCardAdd>
       )}
     </CardContainer>
   );
