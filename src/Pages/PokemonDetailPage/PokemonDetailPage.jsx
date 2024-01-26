@@ -16,81 +16,79 @@ import {
   SubTitleText,
   PokemonMoves,
 } from "./PokemonDetailPageStyles";
-import usePokemonData from "../../hooks/usePokemonData";
+
 import { getPokemonElementImage } from "../../utils/pokemonElementImage";
 import bigPokebolBackground from "../../assets/big-pokeball-background.svg";
 import BaseStats from "../../components/BaseStats/BaseStats";
+import {
+  applyPokemonOrderPattern,
+  changeFirstLetterToCapital,
+  validatePropertiesPokemonDetails,
+} from "../../utils/pokemonUtils";
+import usePokemonData from "../../hooks/usePokemonData";
 
 const PokemonDetailPage = () => {
   const { pokename } = useParams();
   const [pokemonDetails] = usePokemonData(`pokemon/${pokename}`);
-  
+  const { id, name, moves, sprites, stats, types } =
+    validatePropertiesPokemonDetails(pokemonDetails);
 
-  const nameFirstLetterCapital = `${pokemonDetails?.name[0].toUpperCase()}${pokemonDetails?.name.substring(
-    1
-  )}`;
-  const mainPokemonType = pokemonDetails?.types[0].type.name;
-
-  const mainElementImage =
-    pokemonDetails?.types[0] &&
-    getPokemonElementImage(pokemonDetails?.types[0].type.name);
-
-  const secondaryElementImage =
-    pokemonDetails?.types[1] &&
-    getPokemonElementImage(pokemonDetails?.types[1].type.name);
-
-  const pokemonOrderNumber = `#${pokemonDetails?.id
-    .toString()
-    .padStart(2, "0")}`;
-  const pokemonOficialArtworkImage =
-    pokemonDetails?.sprites.other["official-artwork"]["front_default"];
-
-  
+  const mappedMovements =
+    moves &&
+    moves.map((item, index) => {
+      if (index < 4) {
+        return (
+          <PokemonMoves key={item.move.name}>{item.move.name}</PokemonMoves>
+        );
+      }
+    });
 
   return (
     <MainContainer>
       <PageTitle>Detalhes</PageTitle>
-      {pokemonDetails && <PokemonAttributeGrid type={mainPokemonType}>
-        <PokemonImageBox>
-          <img src={pokemonDetails?.sprites["front_default"]} />
-        </PokemonImageBox>
+      {pokemonDetails && (
+        <PokemonAttributeGrid type={types[0]?.type.name}>
+          <PokemonImageBox>
+            <img
+              src={sprites["front_default"]}
+              alt="image of the pokemon from the front"
+            />
+          </PokemonImageBox>
 
-        <PokemonImageBox>
-          <img src={pokemonDetails?.sprites["back_default"]} />
-        </PokemonImageBox>
-        <PokemonStatsBox>
-          
-          <BaseStats
-            stats={pokemonDetails?.stats}
+          <PokemonImageBox>
+            <img
+              src={sprites["back_default"]}
+              alt="image of the pokemon from the back"
+            />
+          </PokemonImageBox>
+          <PokemonStatsBox>
+            <BaseStats stats={stats} />
+          </PokemonStatsBox>
+          <PokebolImage src={bigPokebolBackground} />
+          <PokemonMovesBox>
+            <div>
+              <OrderText>{applyPokemonOrderPattern(id)}</OrderText>
+              <TitleText>{changeFirstLetterToCapital(name)}</TitleText>
+              <ElementalTypesContainer>
+                <PokemonElementImage
+                  src={getPokemonElementImage(types[0]?.type.name)}
+                />
+                <PokemonElementImage
+                  src={getPokemonElementImage(types[1]?.type.name)}
+                />
+              </ElementalTypesContainer>
+            </div>
+            <PokemonMovesList>
+              <SubTitleText>Moves:</SubTitleText>
+              {mappedMovements}
+            </PokemonMovesList>
+          </PokemonMovesBox>
+
+          <PokemonCardImage
+            src={sprites.other["official-artwork"]["front_default"]}
           />
-            
-        </PokemonStatsBox>
-        <PokebolImage src={bigPokebolBackground} />
-        <PokemonMovesBox>
-          <div>
-            <OrderText>{pokemonOrderNumber}</OrderText>
-            <TitleText>{nameFirstLetterCapital}</TitleText>
-            <ElementalTypesContainer>
-              <PokemonElementImage src={mainElementImage} />
-              <PokemonElementImage src={secondaryElementImage} />
-            </ElementalTypesContainer>
-          </div>
-          <PokemonMovesList>
-            <SubTitleText>Moves:</SubTitleText>
-            {pokemonDetails?.moves.map((item, index) => {
-              if (index < 4) {
-                return <PokemonMoves key={item.move.name}>{item.move.name}</PokemonMoves>;
-              }
-            })}
-          </PokemonMovesList>
-          
-        </PokemonMovesBox>
-        
-        <PokemonCardImage src={pokemonOficialArtworkImage} />
-        
-      </PokemonAttributeGrid>
-      }
-    
+        </PokemonAttributeGrid>
+      )}
     </MainContainer>
   );
 };

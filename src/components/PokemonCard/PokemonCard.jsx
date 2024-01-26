@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import {
-  ButtonCardAddRemove,
+  ButtonCardRemover,
+  ButtonCardAdd,
   ButtonCardDetail,
   CardContainer,
-  DivElementalTypes,
+  ElementalTypesContainer,
   ImageCard,
   ImagePokebol,
   Order,
@@ -13,40 +14,38 @@ import {
 import pokebolBackgroun from "../../assets/pokebol-background.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getPokemonElementImage } from "../../utils/pokemonElementImage";
-import { goToDetails } from "../../Router/coordinator";
+import { goToDetails } from "../../router/coordinator";
 import usePokemonManipulation from "../../hooks/usePokemonManipulation";
+import {
+  applyPokemonOrderPattern,
+  changeFirstLetterToCapital,
+} from "../../utils/pokemonUtils";
 
 const PokemonCard = ({ id, name, types, image }) => {
   const [removePokemon, addPokemon] = usePokemonManipulation();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-
-  const nameFirstLetterCapital = name[0].toUpperCase() + name.substring(1);
-  const mainPokemonType = types[0].type.name;
-
-  const mainElementImage =
-    types[0] && getPokemonElementImage(types[0].type.name);
-
-  const secondaryElementImage =
-    types[1] && getPokemonElementImage(types[1].type.name);
-
-  const pokemonOrderNumber = `#${id.toString().padStart(2, "0")}`;
-
   return (
-    <CardContainer type={mainPokemonType}>
+    <CardContainer type={types[0]?.type.name}>
       <ImagePokebol src={pokebolBackgroun} />
 
       <div>
-        <Order>{pokemonOrderNumber}</Order>
-        <Title>{nameFirstLetterCapital}</Title>
-        <DivElementalTypes>
-          <PokemonElementImage src={mainElementImage} alt="" />
+        <Order>{applyPokemonOrderPattern(id)}</Order>
+        <Title>{changeFirstLetterToCapital(name)}</Title>
+        <ElementalTypesContainer>
+          <PokemonElementImage
+            src={getPokemonElementImage(types[0]?.type.name)}
+            alt="primeiro elemento do pokémon"
+          />
 
-          {secondaryElementImage && (
-            <PokemonElementImage src={secondaryElementImage} alt={"elemento"} />
+          {types[1]?.type.name && (
+            <PokemonElementImage
+              src={getPokemonElementImage(types[1]?.type.name)}
+              alt={"segundo elemento do pokémon"}
+            />
           )}
-        </DivElementalTypes>
+        </ElementalTypesContainer>
       </div>
 
       <ImageCard src={image} />
@@ -56,13 +55,11 @@ const PokemonCard = ({ id, name, types, image }) => {
       </ButtonCardDetail>
 
       {pathname === "/pokedex" ? (
-        <ButtonCardAddRemove onClick={() => removePokemon(id)}>
-          Remover
-        </ButtonCardAddRemove>
+        <ButtonCardRemover onClick={() => removePokemon(id)}>
+          Excluir
+        </ButtonCardRemover>
       ) : (
-        <ButtonCardAddRemove onClick={() => addPokemon(id)}>
-          Capturar!
-        </ButtonCardAddRemove>
+        <ButtonCardAdd onClick={() => addPokemon(id)}>Capturar!</ButtonCardAdd>
       )}
     </CardContainer>
   );

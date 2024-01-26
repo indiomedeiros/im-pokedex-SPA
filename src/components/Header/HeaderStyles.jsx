@@ -5,8 +5,9 @@ export const HeaderContainer = styled.header`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   height: 160px;
+ 
+  
 `;
-export const DivTitle = styled.div``;
 
 export const ButtonPokedex = styled.button`
   grid-column: 3/4;
@@ -21,6 +22,7 @@ export const ButtonPokedex = styled.button`
   color: white;
   font-family: "Open Sans", sans-serif;
   margin: 41px;
+ 
 `;
 
 export const ButtonDelete = styled(ButtonPokedex)`
@@ -28,7 +30,7 @@ export const ButtonDelete = styled(ButtonPokedex)`
   width: 226px;
   font-size: 1rem;
 
-  background: #ff6262;
+
 `;
 export const ButtonHome = styled.button`
   grid-column: 1/2;
@@ -42,6 +44,7 @@ export const ButtonHome = styled.button`
   border: none;
   font-family: "Open Sans", sans-serif;
   margin: 41px;
+
 `;
 
 export const LogoStyle = styled.img`
@@ -51,4 +54,5 @@ export const LogoStyle = styled.img`
   align-self: center;
   justify-self: center;
   margin: 21px;
+
 `;

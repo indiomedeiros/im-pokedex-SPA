@@ -1,4 +1,4 @@
-import { GlobalStyle } from "./GlobalStyles/GlobalStyles";
+import { GlobalStyle } from "./globalStyles/GlobalStyles";
 import GlobalState from "./global/GlobalState";
 
 const App = () => {

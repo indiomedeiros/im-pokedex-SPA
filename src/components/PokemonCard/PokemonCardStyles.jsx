@@ -16,7 +16,8 @@ export const CardContainer = styled.div`
 //texts
 const GeneralTextAttributes = styled.p`
   margin-left: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
   color: white;
 `;
 export const Order = styled(GeneralTextAttributes)`
@@ -33,10 +34,8 @@ export const Title = styled(GeneralTextAttributes)`
 `;
 
 //image
-export const DivElementalTypes = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+export const ElementalTypesContainer = styled.div`
+  display: flex;
   width: 80%;
   margin-top: 10px;
   margin-left: 20px;
@@ -66,10 +65,7 @@ export const ImagePokebol = styled.img`
   margin-right: 20px;
 `;
 
-export const PokemonElementImage = styled.img`
- 
-  
-`
+export const PokemonElementImage = styled.img``;
 //buttons
 const GeneralButtonAttributes = styled.button`
   margin: 20px;
@@ -93,7 +89,7 @@ export const ButtonCardDetail = styled(GeneralButtonAttributes)`
   text-decoration: underline;
   color: white;
 `;
-export const ButtonCardAddRemove = styled(GeneralButtonAttributes)`
+export const ButtonCardAdd = styled(GeneralButtonAttributes)`
   grid-column: 2/3;
   grid-row: 3/4;
   width: 146px;
@@ -102,4 +98,17 @@ export const ButtonCardAddRemove = styled(GeneralButtonAttributes)`
   background: #ffffff;
   font-weight: 400;
   position: absolute;
+`;
+
+export const ButtonCardRemover = styled(GeneralButtonAttributes)`
+  grid-column: 2/3;
+  grid-row: 3/4;
+  width: 146px;
+  justify-self: end;
+  border-radius: 8px;
+  background: #ff6262;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+
 `;

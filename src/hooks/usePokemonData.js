@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PokeApi } from "../global/ApiRequestConfig";
+import { PokeApi } from "../services/ApiRequestConfig";
 
 const usePokemonData = (path, initialState) => {
   const [data, setData] = useState(initialState);
