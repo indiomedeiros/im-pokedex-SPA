@@ -1,6 +1,7 @@
 {
   "name": "im-pokedex",
   "private": true,
+  "homepage": "github-page/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
