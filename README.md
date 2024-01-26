@@ -12,7 +12,7 @@ Este foi construído com as seguintes tecnologias:
 - [React Router Dom](https://reactrouter.com/en/main): 6.20.1
 - [Styled Components](https://styled-components.com/): 6.1.1
 - [PokeAPI](https://pokeapi.co/docs/v2#pokemon);
-- [Surge](https://surge.sh/)
+- [Github Pages](https://pages.github.com/)
 
 #### Para rodar o projeto no local:
 primeiro instale as dependências `npm install ` e depois rode o projeto com `npm run dev`.
