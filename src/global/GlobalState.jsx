@@ -9,7 +9,7 @@ const GlobalState = () => {
   const [pokemons, setPokemons] =
     usePokemonDetails(pokemonData.results);
   const [pokedex, setPokedex] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const data = {
     getters: {
