@@ -2,7 +2,7 @@
 
 A Pokédex, também conhecida como Poké-Agenda no Brasil, é uma enciclopédia virtual portátil que os treinadores Pokémon transportam para registrar todas as espécies diferentes de Pokémon que são encontradas durante a sua viagem como treinadores 2. Ela é um dos itens mais importantes de um Treinador Pokémon, com ela é possível saber diversas informações sobre as criaturas, sobre seu tipo e também algumas curiosidades importantes.
 
-[Deploy deste projeto](pokedex.webon.surge.sh)
+[Deploy deste projeto](indiomedeiros.github.io/im-pokedex/)
 
 
 Este foi construído com as seguintes tecnologias:
