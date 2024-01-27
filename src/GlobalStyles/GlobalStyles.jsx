@@ -5,8 +5,14 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-      
         
+   }
+
+   body{
+      @media (max-width: 1366px) {
+         zoom: 0.8;
+      }
+     
    }
    @font-face {
       font-family:Poppins, Inter, sans-serif; 
