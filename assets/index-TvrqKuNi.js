@@ -259,7 +259,7 @@ https://fb.me/react-async-component-lifecycle-hooks`)}if(typeof e.getDerivedStat
     
 `,$g=D.p`
   font-size: 1rem;
-`,Ug=()=>{const{getters:e,setters:t}=N.useContext(vr),{pathname:n}=ko(),r=n.includes("pokedex")?"Oh, no!":"Gotcha!",o=(n.includes("pokedex"),"O Pokémon foi removido da sua Pokedéx"),i=()=>{t.setShowModal(!1)};return O.jsx(O.Fragment,{children:e.showModal&&O.jsxs(Dg,{isOpen:!0,onRequestClose:i,style:{content:{position:"absolute",top:"40%",left:"35%",right:"35%",bottom:"25%",border:"none",background:"#fff",overflow:"auto",WebkitOverflowScrolling:"touch",borderRadius:"20px",outline:"none",padding:"20px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minWidth:"451px",minHeight:"222px"}},children:[O.jsx(zg,{children:r}),O.jsx($g,{children:o})]})})},Hg=D.main`
+`,Ug=()=>{const{getters:e,setters:t}=N.useContext(vr),{pathname:n}=ko(),r=n.includes("pokedex")?"Oh, no!":"Gotcha!",o=n.includes("pokedex")?"O Pokémon foi removido da sua Pokedéx":"O Pokémon foi adicionado na sua Pokedéx",i=()=>{t.setShowModal(!1)};return O.jsx(O.Fragment,{children:e.showModal&&O.jsxs(Dg,{isOpen:!0,onRequestClose:i,style:{content:{position:"absolute",top:"40%",left:"35%",right:"35%",bottom:"25%",border:"none",background:"#fff",overflow:"auto",WebkitOverflowScrolling:"touch",borderRadius:"20px",outline:"none",padding:"20px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minWidth:"451px",minHeight:"222px"}},children:[O.jsx(zg,{children:r}),O.jsx($g,{children:o})]})})},Hg=D.main`
   background: #737373;
   min-height: 100vh;
   display: flex;
