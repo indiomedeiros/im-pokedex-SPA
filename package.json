@@ -1,7 +1,7 @@
 {
   "name": "im-pokedex",
   "private": true,
-  "homepage": "https://indiomedeiros.github.io/im-pokedex/",
+  "homepage": "https://indiomedeiros.github.io/im-pokedex-SPA/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
