@@ -48,12 +48,8 @@ Error generating stack: `+i.message+`
         
    }
 
-   body{
-      @media (max-width: 1366px) {
-         zoom: 0.8;
-      }
-     
-   }
+   
+  
    @font-face {
       font-family:Poppins, Inter, sans-serif; 
       src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
@@ -259,20 +255,23 @@ https://fb.me/react-async-component-lifecycle-hooks`)}if(typeof e.getDerivedStat
     
 `,$g=D.p`
   font-size: 1rem;
-`,Ug=()=>{const{getters:e,setters:t}=N.useContext(vr),{pathname:n}=ko(),r=n.includes("pokedex")?"Oh, no!":"Gotcha!",o=(n.includes("pokedex"),"O Pokémon foi removido da sua Pokedéx"),i=()=>{t.setShowModal(!1)};return O.jsx(O.Fragment,{children:e.showModal&&O.jsxs(Dg,{isOpen:!0,onRequestClose:i,style:{content:{position:"absolute",top:"40%",left:"35%",right:"35%",bottom:"25%",border:"none",background:"#fff",overflow:"auto",WebkitOverflowScrolling:"touch",borderRadius:"20px",outline:"none",padding:"20px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minWidth:"451px",minHeight:"222px"}},children:[O.jsx(zg,{children:r}),O.jsx($g,{children:o})]})})},Hg=D.main`
+`,Ug=()=>{const{getters:e,setters:t}=N.useContext(vr),{pathname:n}=ko(),r=n.includes("pokedex")?"Oh, no!":"Gotcha!",o=n.includes("pokedex")?"O Pokémon foi removido da sua Pokedéx":"O Pokémon foi adicionado na sua Pokedéx",i=()=>{t.setShowModal(!1)};return O.jsx(O.Fragment,{children:e.showModal&&O.jsxs(Dg,{isOpen:!0,onRequestClose:i,style:{content:{position:"absolute",top:"40%",left:"35%",right:"35%",bottom:"25%",border:"none",background:"#fff",overflow:"auto",WebkitOverflowScrolling:"touch",borderRadius:"20px",outline:"none",padding:"20px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minWidth:"451px",minHeight:"222px"}},children:[O.jsx(zg,{children:r}),O.jsx($g,{children:o})]})})},Hg=D.main`
   background: #737373;
   min-height: 100vh;
   display: flex;
   justify-content: center;
 `,Bg=D.div`
   display: grid;
-  grid-template-rows: 0.15fr 1fr;
+  grid-template-rows: 140px 1fr;
+  width: 100%;
   max-width: 1440px;
-`,Vg=D.div`
+  justify-content: left;
+  height: 100%;
+`,Vg=D.h1`
   color: white;
   padding: 60px 0px 25px 30px;
   text-align: left;
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-family: sans-serif;
   font-weight: 700;
 `,Wg=D.div`
@@ -309,7 +308,7 @@ https://fb.me/react-async-component-lifecycle-hooks`)}if(typeof e.getDerivedStat
   margin-bottom: 26vh;
   position: relative;
   column-gap: 34px;
-`,y0=D.section`
+`,y0=D.div`
   background-color: white;
   width: 282px;
   height: 282px;
@@ -319,7 +318,7 @@ https://fb.me/react-async-component-lifecycle-hooks`)}if(typeof e.getDerivedStat
   justify-content: center;
   align-items: center;
   img {
-    width: 70%;
+    width: 100%;
   }
 `,Gg=D.section`
   display: flex;
