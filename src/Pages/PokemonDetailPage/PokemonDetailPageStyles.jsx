@@ -37,7 +37,7 @@ export const PokemonAttributeGrid = styled.section`
   column-gap: 34px;
 `;
 
-export const PokemonImageBox = styled.section`
+export const PokemonImageBox = styled.div`
   background-color: white;
   width: 282px;
   height: 282px;
@@ -47,7 +47,7 @@ export const PokemonImageBox = styled.section`
   justify-content: center;
   align-items: center;
   img {
-    width: 70%;
+    width: 100%;
   }
 `;
 

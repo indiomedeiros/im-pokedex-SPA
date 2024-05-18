@@ -8,12 +8,8 @@ export const GlobalStyle = createGlobalStyle`
         
    }
 
-   body{
-      @media (max-width: 1366px) {
-         zoom: 0.8;
-      }
-     
-   }
+   
+  
    @font-face {
       font-family:Poppins, Inter, sans-serif; 
       src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
