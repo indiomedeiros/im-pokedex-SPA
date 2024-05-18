@@ -11,7 +11,7 @@ const Modal = () => {
   const modalTitle = pathname.includes("pokedex") ? "Oh, no!" : "Gotcha!";
   const modalText = pathname.includes("pokedex")
     ? "O Pokémon foi removido da sua Pokedéx"
-    : "O Pokémon foi removido da sua Pokedéx";
+    : "O Pokémon foi adicionado na sua Pokedéx";
 
   const onCloseModal = () => {
     setters.setShowModal(false);

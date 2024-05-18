@@ -9,14 +9,17 @@ export const MainContainer = styled.main`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-rows: 0.15fr 1fr;
+  grid-template-rows: 140px 1fr;
+  width: 100%;
   max-width: 1440px;
+  justify-content: left;
+  height: 100%;
 `;
-export const TitlePage = styled.div`
+export const TitlePage = styled.h1`
   color: white;
   padding: 60px 0px 25px 30px;
   text-align: left;
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-family: sans-serif;
   font-weight: 700;
 `;
