@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const MainContainer = styled.main`
   background: #737373;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const GridContainer = styled.div`
